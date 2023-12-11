@@ -1,0 +1,29 @@
+<!-- career_stats.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Stats</title>
+</head>
+<body>
+    <h1>Career Stats</h1>
+
+    <p>Name: {{ player.name }}</p>
+    <p>Position: {{ player.position }}</p>
+    <p>Age: {{ player.age }}</p>
+    <p>Trophies: {{ player.trophies }}</p>
+    <p>Ballon d'Or: {{ player.ballondor }}</p>
+
+    {% if team_data %}
+        <p>Team: {{ team_data.name }}</p>
+    {% else %}
+        <p>Team: No team assigned</p>
+    {% endif %}
+
+    <!-- Add other player and team information as needed -->
+
+    <a href="{{ url_for('index') }}">Back to Index</a>
+</body>
+</html>

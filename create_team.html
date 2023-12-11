@@ -1,0 +1,23 @@
+<!-- create_team.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Team</title>
+</head>
+<body>
+    <h1>Create Team</h1>
+
+    <form action="{{ url_for('create_team') }}" method="post">
+        <label for="name">Team Name:</label>
+        <input type="text" name="name" required>
+        <label for="country">Country:</label>
+        <input type="text" name="country" required>
+        <label for="trophies">Trophies:</label>
+        <input type="number" name="trophies" required>
+        <button type="submit">Create Team</button>
+    </form>
+</body>
+</html>

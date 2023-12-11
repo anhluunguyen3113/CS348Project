@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer Player Management</title>
+</head>
+<body>
+    <h1>Fut Fantasy</h1>
+
+    <form action="/add_player" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+        <label for="position">Position:</label>
+        <input type="text" name="position" required>
+        <label for="age">Age:</label>
+        <input type="number" name="age" required>
+        <button type="submit">Add Player</button>
+    </form>
+    <a href="{{ url_for('create_team_page') }}">Create Team</a>
+    <!-- index.html -->
+    <ul>
+        {% for player in players %}
+            <li>
+                {{ player.name }} ({{ player.position }}) - Age: {{ player.age }}
+                <a href="{{ url_for('simulate_career', player_id=player._id) }}">Simulate Career</a>
+                <a href="{{ url_for('edit_player', player_id=player._id) }}">Edit</a>
+                <a href="{{ url_for('delete_player', player_id=player._id) }}">Delete</a>
+                <a href="{{ url_for('player_stats', player_id=player._id) }}"><button>View Stats</button></a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('view_teams') }}"><button>View All Teams</button></a>
+
+</body>
+</html>

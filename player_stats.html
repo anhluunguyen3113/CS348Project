@@ -1,0 +1,23 @@
+<!-- player_stats.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Stats</title>
+</head>
+<body>
+    <h1>Player Stats</h1>
+
+    <p>Name: {{ player.name }}</p>
+    <p>Position: {{ player.position }}</p>
+    <p>Age: {{ player.age }}</p>
+    <p>Trophies: {{ player.trophies }}</p>
+    <p>Ballon d'Or: {{ player.ballondor }}</p>
+  
+
+    <!-- Add other player information as needed -->
+
+    <a href="{{ url_for('index') }}">Back to Index</a>
+</body>
+</html>

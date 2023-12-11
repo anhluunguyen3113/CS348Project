@@ -1,0 +1,22 @@
+<!-- view_teams.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Teams</title>
+</head>
+<body>
+    <h1>View Teams</h1>
+
+    <ul>
+        {% for team in teams %}
+            <li>
+                <a href="{{ url_for('team_stats', team_id=team._id) }}">{{ team.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('index') }}">Back to Index</a>
+</body>
+</html>
